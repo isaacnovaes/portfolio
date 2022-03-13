@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+:root {
+  --dark-bg: #141628;
+  --light-dark-bg: #1b1e32;
+  --green: #8ce35b;
+  --font-family: "Poppins", sans-serif;
+  --size-300: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
+  --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
+  --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
+  --size-700: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
+  --size-800: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
+  --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
+  --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
+}
+
+html {
+  box-sizing: border-box;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+  /* Set core root defaults */
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img {
+  border-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+input,
+textarea {
+  appearance: none;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* Remove all animations, transitions, and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

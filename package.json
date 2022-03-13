@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My first portfolio",
+  "main": "app.js",
+  "scripts": {
+    "sass": "sass --watch ./stylesheets/main.scss ./stylesheets/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacnovaes/portfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Isaac Novaes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isaacnovaes/portfolio/issues"
+  },
+  "homepage": "https://github.com/isaacnovaes/portfolio#readme",
+  "dependencies": {
+    "sass": "^1.49.9"
+  }
+}
