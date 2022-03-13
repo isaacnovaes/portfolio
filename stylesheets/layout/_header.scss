@@ -1,0 +1,145 @@
+@use "../abstracts/mixins";
+
+header {
+	@include mixins.container;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 10px;
+	position: sticky;
+	z-index: 3;
+	transition: 0.5s;
+
+	.isaac-icon {
+		font-size: var(--size-600);
+		font-weight: 700;
+	}
+
+	.hamburger-container {
+		background-color: var(--green);
+		width: 50px;
+		height: 45px;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border-radius: var(--border-radius);
+		transition: 0.5s;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		div {
+			content: "";
+			height: 3px;
+			background-color: var(--white);
+			transition: 0.5s;
+		}
+	}
+
+	.hamburger-container-active {
+		div:nth-child(1) {
+			transform: translate(-1px, 11px) rotate(45deg);
+		}
+		div:nth-child(2) {
+			transform: translateX(-15px);
+			opacity: 0;
+		}
+		div:nth-child(3) {
+			transform: translate(-1px, -10px) rotate(-45deg);
+		}
+	}
+
+	.desktop-links {
+		display: none;
+	}
+}
+
+.header-active {
+	padding: 10px 20px;
+}
+
+.blur-bg {
+	display: none;
+	position: fixed;
+	z-index: 2;
+	inset: 0;
+	background-color: rgba(230, 223, 223, 0.212);
+	backdrop-filter: blur(5px);
+}
+
+.blur-bg-active {
+	display: block;
+}
+
+.mobile-links {
+	width: 90%;
+	margin-top: 1rem;
+	max-width: 1500px;
+	position: absolute;
+	left: 5%;
+	transform: translateX(-5%);
+	height: calc(100vh - 10rem);
+	z-index: 3;
+
+	background-color: inherit;
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: 0.5s;
+	transform: scale(0);
+	overflow: hidden;
+
+	a {
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: var(--size-700);
+		padding: 20px;
+		transition: 0.5s;
+	}
+}
+
+.mobile-links-active {
+	transform: scale(1);
+	a {
+		animation: animateMobileNavLinks 1s ease 0.5s 1 normal both;
+	}
+	@keyframes animateMobileNavLinks {
+		0% {
+			opacity: 0;
+			transform: translateX(250px) rotate(200deg);
+		}
+
+		100% {
+			opacity: 1;
+			transform: translateX(0) rotate(0deg);
+		}
+	}
+}
+
+@media screen and (min-width: 800px) {
+	header {
+		.hamburger-container {
+			display: none;
+		}
+
+		.desktop-links {
+			display: flex;
+			justify-content: space-between;
+			width: 65%;
+			max-width: 500px;
+
+			a {
+				@include mixins.call-to-action;
+			}
+		}
+	}
+	.blur-bg,
+	.mobile-links {
+		display: none;
+	}
+}

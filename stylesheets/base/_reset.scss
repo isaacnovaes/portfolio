@@ -25,10 +25,13 @@ html {
 	font-size: 100%;
 	font-family: var(--font-family);
 	font-weight: 400;
+	color: var(--white);
 }
 
 body {
 	min-height: 100vh;
+	position: relative;
+	background-color: var(--dark-bg);
 }
 
 img {
