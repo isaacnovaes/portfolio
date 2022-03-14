@@ -3,8 +3,9 @@
 .home {
 	@include mixins.container;
 	box-shadow: none;
-	margin-top: 5rem;
+	margin-top: 6rem;
 	margin-bottom: 15rem;
+	transition: 0.5s;
 
 	.first-container {
 		display: flex;
@@ -16,6 +17,7 @@
 			width: 100%;
 			max-width: 500px;
 			border-radius: var(--border-radius);
+			object-fit: cover;
 		}
 
 		.social-media-links {
@@ -37,7 +39,8 @@
 					}
 				}
 				&:last-of-type svg {
-					path {
+					path,
+					ellipse {
 						fill: var(--white);
 						transition: 0.5s;
 					}
@@ -54,7 +57,8 @@
 					}
 
 					&:last-of-type svg {
-						path {
+						path,
+						ellipse {
 							fill: var(--green);
 						}
 					}
@@ -116,6 +120,21 @@
 	}
 }
 
+.animate-home {
+	animation: animateHome 0.8s 1.8s both;
+
+	.second-container {
+		.buttons-container {
+			a {
+				animation: animateButtons 0.8s 2.8s both;
+				&:last-of-type {
+					animation-delay: 4s;
+				}
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 900px) {
 	.home {
 		display: flex;
@@ -163,5 +182,42 @@
 				column-gap: 30px;
 			}
 		}
+	}
+
+	.animate-home {
+		animation: animateHome 0.8s 2.8s both;
+
+		.second-container {
+			.buttons-container {
+				a {
+					animation: animateButtons 0.8s 3.8s both;
+					&:last-of-type {
+						animation-delay: 4s;
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes animateHome {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes animateButtons {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

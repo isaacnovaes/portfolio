@@ -7,14 +7,20 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 10px;
-	position: relative;
 	height: 4rem;
+	position: fixed;
 	z-index: 3;
+	background-color: var(--dark-bg);
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
 	transition: 0.5s;
+	overflow: hidden; // animation-wise
 
 	.isaac-icon {
 		font-size: var(--size-600);
 		font-weight: 700;
+		animation: animateIsaac 0.8s 0.5s both;
 	}
 
 	.hamburger-container {
@@ -27,6 +33,7 @@ header {
 		justify-content: space-between;
 		border-radius: var(--border-radius);
 		transition: 0.5s;
+		animation: animateLinks 0.8s 1.3s both;
 
 		&:hover {
 			cursor: pointer;
@@ -55,11 +62,23 @@ header {
 
 	.desktop-links {
 		display: none;
+		animation: animateLinks 0.8s 1.3s both;
+
+		a:last-of-type {
+			animation: animateContactLink 0.8s 2.1s both;
+		}
 	}
 }
 
 .header-active {
 	padding: 10px 20px;
+}
+
+.header-sticky {
+	background-color: var(--dark-bg);
+	left: 50%;
+	transform: translateX(-50%);
+	top: 0;
 }
 
 .blur-bg {
@@ -79,7 +98,7 @@ header {
 	width: 90%;
 	margin-top: 1rem;
 	max-width: 1500px;
-	position: absolute;
+	position: fixed;
 	left: 5%;
 	transform: translateX(-5%);
 	height: calc(100vh - 10rem);
@@ -99,26 +118,9 @@ header {
 		width: 100%;
 		text-align: center;
 		font-size: var(--size-700);
+		color: var(--green);
 		padding: 20px;
 		transition: 0.5s;
-	}
-}
-
-.mobile-links-active {
-	transform: scale(1);
-	a {
-		animation: animateMobileNavLinks 1s ease 0.5s 1 normal both;
-	}
-	@keyframes animateMobileNavLinks {
-		0% {
-			opacity: 0;
-			transform: translateX(250px) rotate(200deg);
-		}
-
-		100% {
-			opacity: 1;
-			transform: translateX(0) rotate(0deg);
-		}
 	}
 }
 
@@ -142,5 +144,50 @@ header {
 	.blur-bg,
 	.mobile-links {
 		display: none;
+	}
+}
+
+.mobile-links-active {
+	transform: scale(1);
+	a {
+		animation: animateMobileNavLinks 1s ease 0.5s 1 normal both;
+	}
+	@keyframes animateMobileNavLinks {
+		0% {
+			opacity: 0;
+			transform: translateX(250px) rotate(200deg);
+		}
+
+		100% {
+			opacity: 1;
+			transform: translateX(0) rotate(0deg);
+		}
+	}
+}
+
+@keyframes animateIsaac {
+	from {
+		transform: translateX(-150%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes animateLinks {
+	from {
+		transform: translateX(150%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes animateContactLink {
+	from {
+		transform: translateY(-100px);
+	}
+	to {
+		transform: translateY(0);
 	}
 }
