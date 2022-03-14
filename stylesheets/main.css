@@ -547,6 +547,14 @@ header .desktop-links a:last-of-type {
   font-size: var(--size-800);
   font-weight: 500;
 }
+.projects .projects-container > h3 {
+  font-size: var(--size-500);
+  font-weight: 500;
+  margin-top: 50px;
+}
+.projects .projects-container > h3 a {
+  color: var(--green);
+}
 .projects .projects-container .projects-main-container {
   display: flex;
   flex-direction: column;
