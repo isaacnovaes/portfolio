@@ -89,7 +89,6 @@ const showError = element => {
 };
 
 form.addEventListener("submit", e => {
-	e.preventDefault();
 	let formIsValid = true;
 
 	if (validateString(userName.value)) {
@@ -110,6 +109,5 @@ form.addEventListener("submit", e => {
 		userName.classList.remove("showError");
 		userName.classList.remove("showError");
 		userMessage.classList.remove("showError");
-		return true;
-	} else return false;
+	} else e.preventDefault();
 });
