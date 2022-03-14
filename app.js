@@ -88,6 +88,22 @@ const showError = element => {
 	}, 3000);
 };
 
+function validateEmail(email) {
+	if (email.trim() === "") {
+		console.log("heey");
+		return false;
+	} else if (
+		!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+			email.trim()
+		)
+	) {
+		console.log("heey");
+		return false;
+	} else {
+		return true;
+	}
+}
+
 form.addEventListener("submit", e => {
 	let formIsValid = true;
 
@@ -95,7 +111,7 @@ form.addEventListener("submit", e => {
 		showError(userName);
 		formIsValid = false;
 	}
-	if (validateString(userEmail.value)) {
+	if (!validateEmail(userEmail.value)) {
 		showError(userEmail);
 		formIsValid = false;
 	}
