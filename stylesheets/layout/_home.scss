@@ -26,43 +26,7 @@
 			column-gap: 40px;
 
 			a {
-				width: 60px;
-				border-radius: 0.5rem;
-				border: 1px solid transparent;
-				transition: 0.5s;
-				padding: 10px;
-
-				&:first-of-type svg {
-					path:last-of-type {
-						fill: var(--white);
-						transition: 0.5s;
-					}
-				}
-				&:last-of-type svg {
-					path,
-					ellipse {
-						fill: var(--white);
-						transition: 0.5s;
-					}
-				}
-
-				&:hover {
-					border: 1px solid var(--green);
-					transform: rotate(360deg) scale(1.15);
-
-					&:first-of-type svg {
-						path:last-of-type {
-							fill: var(--green);
-						}
-					}
-
-					&:last-of-type svg {
-						path,
-						ellipse {
-							fill: var(--green);
-						}
-					}
-				}
+				@include mixins.social-media-links;
 			}
 		}
 	}

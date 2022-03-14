@@ -365,8 +365,12 @@ header .desktop-links a:last-of-type {
   fill: var(--white);
   transition: 0.5s;
 }
-.home .first-container .social-media-links a:last-of-type svg path,
-.home .first-container .social-media-links a:last-of-type svg ellipse {
+.home .first-container .social-media-links a:last-of-type svg path {
+  transition: 0.5s;
+  fill: var(--white);
+}
+.home .first-container .social-media-links a:nth-of-type(2) svg path,
+.home .first-container .social-media-links a:nth-of-type(2) svg ellipse {
   fill: var(--white);
   transition: 0.5s;
 }
@@ -377,8 +381,11 @@ header .desktop-links a:last-of-type {
 .home .first-container .social-media-links a:hover:first-of-type svg path:last-of-type {
   fill: var(--green);
 }
-.home .first-container .social-media-links a:hover:last-of-type svg path,
-.home .first-container .social-media-links a:hover:last-of-type svg ellipse {
+.home .first-container .social-media-links a:hover:last-of-type svg path {
+  fill: var(--green);
+}
+.home .first-container .social-media-links a:hover:nth-of-type(2) svg path,
+.home .first-container .social-media-links a:hover:nth-of-type(2) svg ellipse {
   fill: var(--green);
 }
 .home .second-container {
@@ -846,8 +853,12 @@ footer .footer-container .footer-main-container .social-media-links a:first-of-t
   fill: var(--white);
   transition: 0.5s;
 }
-footer .footer-container .footer-main-container .social-media-links a:last-of-type svg path,
-footer .footer-container .footer-main-container .social-media-links a:last-of-type svg ellipse {
+footer .footer-container .footer-main-container .social-media-links a:last-of-type svg path {
+  transition: 0.5s;
+  fill: var(--white);
+}
+footer .footer-container .footer-main-container .social-media-links a:nth-of-type(2) svg path,
+footer .footer-container .footer-main-container .social-media-links a:nth-of-type(2) svg ellipse {
   fill: var(--white);
   transition: 0.5s;
 }
@@ -858,8 +869,11 @@ footer .footer-container .footer-main-container .social-media-links a:hover {
 footer .footer-container .footer-main-container .social-media-links a:hover:first-of-type svg path:last-of-type {
   fill: var(--green);
 }
-footer .footer-container .footer-main-container .social-media-links a:hover:last-of-type svg path,
-footer .footer-container .footer-main-container .social-media-links a:hover:last-of-type svg ellipse {
+footer .footer-container .footer-main-container .social-media-links a:hover:last-of-type svg path {
+  fill: var(--green);
+}
+footer .footer-container .footer-main-container .social-media-links a:hover:nth-of-type(2) svg path,
+footer .footer-container .footer-main-container .social-media-links a:hover:nth-of-type(2) svg ellipse {
   fill: var(--green);
 }
 footer .footer-container .footer-main-container .isaac p,
