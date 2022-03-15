@@ -1,6 +1,6 @@
 # My portfolio
 
-[Project live](https://isaac-novaes-portfolio.netlify.app/)
+[Live project](https://isaac-novaes-portfolio.netlify.app/)
 
 ![Project preview](./assets/preview.png)
 
