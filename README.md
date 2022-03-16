@@ -38,5 +38,4 @@
 - JS
 - Animations
 - IntersectionObserver API
-
-
+  
