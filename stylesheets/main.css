@@ -675,7 +675,6 @@ header .desktop-links a:last-of-type {
 .skills .skills-container .skills-main-container .skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 30px;
 }
 .skills .skills-container .skills-main-container .skills .skill {
